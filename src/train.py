@@ -15,7 +15,7 @@ from ml4gw.dataloading import ChunkedTimeSeriesDataset, Hdf5TimeSeriesDataset # 
 from ml4gw.utils.slicing import sample_kernels # type: ignore
 from ml4gw.distributions import PowerLaw, Sine, DeltaFunction # type: ignore
 
-from model import WhisperModule, Wav2Vec2Module, ASTModule, WavLMModule, HubertModule, ParakeetModule, MimiModule
+from model import WhisperModule, Wav2Vec2Module, ASTModule, HubertModule, MimiModule #, WavLMModule, ParakeetModule
 from utils import EarlyStopper
 
 plt.rcParams.update({
@@ -563,13 +563,13 @@ def main(args):
             input_sample_rate=2048,
             target_sample_rate=16000,
         ).to(device)
-    elif args.model_name == "WavLM":
-        architecture = WavLMModule(
-            wavlm_model_name="microsoft/wavlm-base",
-            model_name="wavlm",
-            input_sample_rate=2048,
-            target_sample_rate=16000,
-        ).to(device)
+    # elif args.model_name == "WavLM":
+    #     architecture = WavLMModule(
+    #         wavlm_model_name="microsoft/wavlm-base",
+    #         model_name="wavlm",
+    #         input_sample_rate=2048,
+    #         target_sample_rate=16000,
+    #     ).to(device)
     elif args.model_name == "Hubert":
         architecture = HubertModule(
             hubert_model_name="facebook/hubert-base-ls960",
@@ -577,13 +577,13 @@ def main(args):
             input_sample_rate=2048,
             target_sample_rate=16000,
         ).to(device)
-    elif args.model_name == "Parakeet":
-        architecture = ParakeetModule(
-            parakeet_model_name="nvidia/parakeet-ctc-1.1b",
-            model_name="parakeet",
-            input_sample_rate=2048,
-            target_sample_rate=16000,
-        ).to(device)
+    # elif args.model_name == "Parakeet":
+    #     architecture = ParakeetModule(
+    #         parakeet_model_name="nvidia/parakeet-ctc-1.1b",
+    #         model_name="parakeet",
+    #         input_sample_rate=2048,
+    #         target_sample_rate=16000,
+    #     ).to(device)
     elif args.model_name == "Mimi":
         architecture = MimiModule(
             mimi_model_name="kyutai/mimi",
