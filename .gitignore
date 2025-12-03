@@ -2,3 +2,5 @@
 *.log
 .ipynb*
 metrics.csv
+*.pt
+__pycache__/
