@@ -321,6 +321,7 @@ transformers-for-GW-analysis/
 │
 ├── DGX_train.sh # slurm script to run 'src/train.py'
 ├── roc_curves.ipynb # notebook where I plotted all of the figures
+├── LICENSE # MIT LICENSE
 └── README.md # you are reading this file!
 ```
 
